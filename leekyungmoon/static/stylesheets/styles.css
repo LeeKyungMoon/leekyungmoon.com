@@ -6,6 +6,13 @@ button:hover{
   -webkit-box-shadow: 5px 5px 5px #111;
 }
 
+a:hover{
+    color:gray;
+}
+a{
+    color:white;
+}
+
 #header{
     width:100%;
     padding-top:140px;
@@ -45,6 +52,10 @@ button:hover{
 body{
     background-color:rgb(118, 106, 98);
     margin:0;
+}
+
+body div#header p{
+    font-size:80%;
 }
 
 @media only screen and (max-width: 560px) {
