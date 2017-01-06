@@ -6,6 +6,13 @@ button:hover{
   -webkit-box-shadow: 5px 5px 5px #111;
 }
 
+a:hover{
+    color:gray;
+}
+a{
+    color:white;
+}
+
 #header{
     width:100%;
     padding-top:140px;
@@ -28,7 +35,9 @@ button:hover{
     width: 130px;
     height: 130px;
     margin-right: 18px;
-
+    background-position: 50% 50%;
+    border:none;
+    background-size:cover;
 }
 
 .small-circle {
@@ -36,4 +45,39 @@ button:hover{
     width: 80px;
     height: 80px;
     margin-left: 18px;
+    background-position: 50% 50%;
+    border:none;
+    background-size:cover;
+}
+body{
+    background-color:rgb(118, 106, 98);
+    margin:0;
+}
+
+body div#header p{
+    font-size:80%;
+}
+
+@media only screen and (max-width: 560px) {
+    .circle{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin:0;
+        background-position: 50% 50%;
+        border:none;
+        background-size:cover;
+    }
+    .small-circle{
+        border-radius: 50%;
+        width:60px;
+        height:60px;
+        margin:0;
+        background-position: 50% 50%;
+        border: none;
+        background-size:cover;
+    }
+    #main{
+        width:100%;
+    }
 }
