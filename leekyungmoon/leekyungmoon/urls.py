@@ -17,12 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import  static
 
-from . import settings
-from .views import HomeView
+from . import settings,views
+from .views import HomeView, kbo_salary_randomforest_pdf_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view())
+    url(r'^$', HomeView.as_view()),
+    #url(r'^project/$', views.kbo_randomforest_pdf_view()),
+    url(r'^project/kbo-salary-randomforest/$', kbo_salary_randomforest_pdf_view.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
