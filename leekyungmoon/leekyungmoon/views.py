@@ -1,8 +1,8 @@
+import os
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import View
-
 
 
 class HomeView(TemplateView):
@@ -12,18 +12,11 @@ class HomeView(TemplateView):
         return render(request, self.template_name)
 
 
-class kbo_salary_randomforest_pdf_view(View):
+class kbo_salary_prediction_modeling_randomforest_pdf_view(View):
     def get(self, request, *args, **kwargs):
-        with open('/Users/kyungmoon/leekyungmoon.com/leekyungmoon/leekyungmoon/test_cv.pdf', 'rb') as pdf:
+        current_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        current_path += '/leekyungmoon/project/kbo-salary-prediction-modeling-randomforest.pdf'
+        with open(current_path, 'rb') as pdf:
             response = HttpResponse(pdf.read(),content_type='application/pdf')
-            response['Content-Disposition'] = 'filename=test_cv.pdf'
+            response['Content-Disposition'] = 'filename=kbo-salary-prediction-modeling-randomforest.pdf'
             return response
-
-"""
-def kbo_salary_randomforest_pdf_view(request):
-    print('request came')
-    with open('/Users/kyungmoon/leekyungmoon.com/leekyungmoon/leekyungmoon/test_cv.pdf', 'rb') as pdf:
-        response = HttpResponse(pdf.read(),content_type='application/pdf')
-        response['Content-Disposition'] = 'filename=test_cv.pdf'
-        return response
-"""
