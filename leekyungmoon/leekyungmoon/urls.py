@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
     url(r'^project/kbo-salary-prediction-modeling-randomforest.pdf', kbo_salary_prediction_modeling_randomforest_pdf_view.as_view()),
-    url(r'^cv.pdf', kcc17_are_you_overestimated.as_view()),
+    url(r'^publish/kcc17-are-you-overestimated.pdf', kcc17_are_you_overestimated.as_view()),
     url(r'^cv.pdf',CV_view.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
