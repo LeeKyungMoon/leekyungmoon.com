@@ -22,6 +22,16 @@ class kbo_salary_prediction_modeling_randomforest_pdf_view(View):
             return response
 
 
+class kcc17_are_you_overestimated(View):
+    def get(self, request, *args, **kwargs):
+        current_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        current_path += '/leekyungmoon/publish/kcc17_are_you_overestimated.pdf'
+        with open(current_path, 'rb') as pdf:
+            response = HttpResponse(pdf.read(),content_type='application/pdf')
+            response['Content-Disposition'] = 'filename=kcc17_are_you_overestimated.pdf'
+            return response
+
+
 class CV_view(View):
     def get(self, request, *args, **kwargs):
         current_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
